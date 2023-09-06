@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Rekayasa Perangkat Lunak </title>
+</head>
+<body>
+    <div id="sidebar">
+        <div id="profile">
+            <img src="proffile.png" alt="Foto Profil Anda" id="profile-image">
+        </div>
+        <hr class="separator">
+        <button class="sidebar-button" onclick="loadDashboard()">Dashboard</button>
+        <button class="sidebar-button" onclick="loadBiodata()">Biodata</button>
+        <button class="sidebar-button" onclick="loadTutorial()">Tutorial</button>
+    </div>
+    <div id="content">
+        <!-- Isi konten halaman Anda akan ada di sini -->
+    </div>
+    <!-- Java Script -->
+    <script>
+        function loadDashboard() {
+            document.getElementById("content").innerHTML = `
+                <h1>Dashboard</h1>
+                <div id="calendar"></div>
+                <div id="greeting"></div>
+                <div id="clock"></div>
+            `;
+            
+            // Memanggil fungsi untuk menampilkan kalender, ucapan selamat datang, dan jam
+            displayCalendar();
+            displayGreeting();
+            displayClock();
+        }
+
+        function displayCalendar() {
+            // Isikan konten kalender di sini
+            // Misalnya, Anda dapat menggunakan library atau kode JavaScript untuk menampilkan kalender.
+        }
+
+        function displayGreeting() {
+            const currentTime = new Date();
+            const currentHour = currentTime.getHours();
+
+            let greeting;
+
+            if (currentHour < 12) {
+                greeting = "Selamat pagi!";
+            } else if (currentHour < 18) {
+                greeting = "Selamat siang!";
+            } else {
+                greeting = "Selamat malam!";
+            }
+
+            document.getElementById("greeting").innerHTML = `<p>${greeting}</p>`;
+        }
+
+        function displayClock() {
+            setInterval(() => {
+                const currentTime = new Date();
+                const hours = currentTime.getHours();
+                const minutes = currentTime.getMinutes();
+                const seconds = currentTime.getSeconds();
+
+                const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+                document.getElementById("clock").innerHTML = `<p>Jam: ${formattedTime}</p>`;
+            }, 1000); // Mengupdate jam setiap 1 detik
+        }
+    </script>
+    <script>
+        function loadBiodata() {
+            document.getElementById("content").innerHTML = `
+                <h1>Biodata</h1>
+                <div id="biodata-container">
+                    <img src="proffile.png" alt="Foto Profil Anda" id="biodata-image">
+                    <div id="biodata-info">
+                        <p><strong>Nama:</strong> Paskal Victor Punusingon</p>
+                        <p><strong>NIM:</strong> 220211060274 </p>
+                        <p><strong>Universitas:</strong>  Sam Ratulangi</p>
+                        <p><strong>Fakultas:</strong> Fakultas Teknik </p>
+                        <p><strong>Prodi :</strong> Informatika</p>
+                    </div>
+                </div>
+                <p>Kata-kata bijak Anda di sini.</p>
+            `;
+        }
+    </script>
+</body>
+</html>

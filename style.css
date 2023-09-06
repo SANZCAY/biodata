@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('balloons_desktop.webm'); /* Ganti 'background.jpg' dengan path gambar latar belakang Anda */
+    background-size: 100% ; /* Menyesuaikan gambar latar belakang dengan ukuran layar */
+    background-repeat: no-repeat; /* Mencegah gambar latar belakang berulang */
+    background-attachment: fixed; /* Membuat gambar latar belakang tetap saat menggulir halaman */
+    background-color: rgba(255, 255, 255, 0.5); /* Mengatur latar belakang menjadi putih dengan efek transparan */
+}
+
+/* Menambahkan opacity pada gambar latar belakang */
+body::after {
+    content: "";
+    opacity: 0.5; /* Nilai opacity dari 0 (sepenuhnya transparan) hingga 1 (tidak ada transparansi) */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; /* Menempatkan gambar latar belakang di bawah konten lainnya */
+}
+
+
+#sidebar {
+    height: 100%;
+    width: 250px;
+    background-color: #3498db;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#profile {
+    margin-bottom: 20px;
+}
+
+#profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Mengubah foto profil menjadi bentuk bulat */
+    object-fit: cover; /* Menyesuaikan gambar agar terlihat baik dalam lingkaran */
+    border: 2px solid white; /* Tambahkan border putih ke foto profil */
+}
+
+.separator {
+    border: 1px solid white; /* Tambahkan garis pemisah */
+    margin: 10px 0;
+}
+
+.sidebar-button {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    width: 100%; /* Mengisi lebar tombol */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar-button:hover {
+    background-color: #2980b9;
+    color: white;
+}
+
+#content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* Tambahkan style untuk mengatur tampilan biodata-info dan biodata-image */
+#biodata-container {
+    display: flex;
+    align-items: center; /* Menyelaraskan elemen secara vertikal */
+}
+
+#biodata-image {
+    width: 512px; /* Atur ukuran foto Anda sesuai kebutuhan */
+    height: auto; /* Biarkan tinggi foto menyesuaikan untuk menjaga proporsi */
+    margin-right: 20px; /* Memberi jarak antara foto dan biodata-info */
+}
+
+#biodata-info {
+    font-size: 60px; /* Ubah ukuran teks agar lebih besar */
+}
+
+/* Style tambahan sesuai kebutuhan */
+#greeting {
+    font-size: 24px; /* Ubah ukuran teks ucapan selamat sesuai keinginan Anda */
+}
+
+/* Memperbesar ukuran teks pada clock (jam) */
+#clock {
+    font-size: 24px; /* Ubah ukuran teks jam sesuai keinginan Anda */
+}
